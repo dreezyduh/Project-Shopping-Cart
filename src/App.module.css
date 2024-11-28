@@ -82,33 +82,7 @@ a > img:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 1fr; */
     height: 100vh;
 }
 
-.blur {
-    display: flex;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    backdrop-filter: blur(10px);
-    height: max-content;
-    color: white;
-    gap: 30px;
-    div {
-        font-size: 40px;
-        font-weight: 600;
-    }
-    h1 {
-        align-self: center;
-        font-weight: 400;
-        width: 500px;
-    }
-}
-
-.acquisitions {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-}
 

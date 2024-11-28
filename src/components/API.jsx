@@ -1,3 +1,4 @@
+import { func } from "prop-types";
 import { useEffect, useState } from "react"
 
 const url = 'https://bymykel.github.io/CSGO-API/api/en/skins.json'
@@ -26,8 +27,10 @@ const useAPIdata = () => {
         } 
         fetchData()
     }, [])
-
+    
     return {data, error, loading};
 }
+
+
 
 export default useAPIdata;

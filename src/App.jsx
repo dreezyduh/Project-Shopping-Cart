@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef } from 'react'
 import useAPIdata from './components/API';
 import { Link, Outlet } from 'react-router-dom';
 import styles from './App.module.css'
@@ -8,12 +8,17 @@ import logo from './assets/logo.png'
 
 
 function App() {
+  const init = useRef(false);
+ 
   const {data, error, loading} = useAPIdata();
 
   if (loading) return <p>Loading data...</p>;
   if (error) return <p>Network error encountered {error}</p>
+  
+  console.log(data)
+  dataNames(data);
 
-  return (
+  {init.current === true && data} return (
     <div className={styles.oxanium}>
       <nav className={styles.navBar}>
         <div className={styles.logo}>
@@ -37,3 +42,11 @@ function App() {
 }
 
 export default App
+
+function dataNames(data) {
+  if (data !== null) {
+      data.forEach(item => {
+          item.short = item.name.split('| ')[1]
+      });
+  }
+}
