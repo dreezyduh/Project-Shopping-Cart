@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import { useEffect, useState } from "react"
 
 const url = 'https://bymykel.github.io/CSGO-API/api/en/skins.json'
@@ -7,6 +6,7 @@ const useAPIdata = () => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,6 +31,20 @@ const useAPIdata = () => {
     return {data, error, loading};
 }
 
+function filterList(query, list) {
+    query = query.toLowerCase().split(' ');
+    const regex = new RegExp(query.join(`?\\W+`), 'i');
+    return list.filter(item => 
+        item.name.toLowerCase().match(regex)
+        
+    );
+}
+
+function filterCategory(categ, data) {
+    return categ === '' ? data : data.filter(item => item.category.name === categ);
+}
+
 
 
 export default useAPIdata;
+export {filterList, filterCategory};

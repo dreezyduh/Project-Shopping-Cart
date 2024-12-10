@@ -1,9 +1,14 @@
 .label {
     font-size: 30px;
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.label > input {
+    background-color: rgb(255, 153, 0);
+    border-radius: 10px;
 }
 
 .form {
@@ -27,11 +32,51 @@
     align-items: center;
 }
 
+.add {
+    font-size: 15px;
+    font-weight: 900;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 2px solid black;
+    justify-content: center;
+    background-color: white;
+    width: 15%;
+    visibility: hidden;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
+
+.priceCont {
+    position: relative;
+}
+
+.priceCont:hover {
+    .add {
+        visibility: visible;
+    }
+}
+
+.price {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .scrollableList {
     display: grid;
     gap: 10px;
     height: 50vh;
-    width: 669px;
+    width: 570px;
     grid-template-columns: repeat(auto-fill, 130px);
     overflow: auto;
     
@@ -44,6 +89,71 @@
 
 .scrollableList::-webkit-scrollbar-thumb {
     background-color: rgb(145, 145, 145);
+    background-clip: content-box;
+    border: solid 3px transparent;
     border-radius: 5px;
     height: 40px;
+}
+
+.category {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.alertCont {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: max-content;
+}
+
+.alertCont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alert {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    animation-name: alert;
+    animation-duration: 2s;
+}
+
+@keyframes alert {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+@media (max-width: 600px) {
+    .form {
+        padding: 10px;
+    }
+
+    .categItems {
+        flex-direction: column;
+    }
+
+    .category > div {
+        display: none;
+    }
+
+    .scrollableList {
+        grid-template-columns: repeat(auto-fill, 90px);
+        width: 310px;
+    }
+
+    .price {
+        font-size: 10px;
+    }
 }

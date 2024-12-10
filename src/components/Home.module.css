@@ -5,15 +5,25 @@
     padding: 30px;
     backdrop-filter: blur(10px);
     height: max-content;
-    color: white;
     gap: 30px;
+    color: rgb(255, 153, 0);
     
 }
 
+hr {
+    border-color: rgb(255, 153, 0);
+}
+
 .acquisitions {
+    color: black;
+    font-weight: 900;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.acquisitions > li > div {
+    font-weight: 600;
 }
 
 .blur > div {
@@ -25,4 +35,37 @@
     align-self: center;
     font-weight: 400;
     width: 500px;
+}
+
+@media (max-width: 600px) {
+    .blur {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        font-size: 8px;
+        border-radius: 0;
+    }
+
+    .blur > div {
+        font-size: 10px;
+    }
+
+    .blur > div > p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .blur > div > div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .blur > h1 {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .acquisitions {
+        grid-template-columns: 90px 90px 90px;
+    }
 }

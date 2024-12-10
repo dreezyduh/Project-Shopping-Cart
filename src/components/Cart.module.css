@@ -1,0 +1,97 @@
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    backdrop-filter: blur(10px);
+    font-size: 25px;
+    height: max-content;
+    max-height: 65vh;
+}
+
+.cart ul {
+    padding: 0;
+}
+
+table {
+    width: 100%;
+}
+
+.tableHeaders {
+    border-bottom: 2px rgb(255, 153, 0) solid;
+    border-collapse: collapse;
+}
+
+.tableCont {
+    width: 100%;
+    max-height: 60vh;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.tableCont thead tr {
+    position: sticky;
+    border-radius: 10px;
+    top: 0px;
+    background-color: rgb(255, 153, 0);
+}
+
+.tableCont::-webkit-scrollbar {
+    background-color: black;
+    border-top-right-radius: 5px;
+    border: solid 30px transparent;
+}
+
+.tableCont::-webkit-scrollbar-thumb {
+    background-color: rgb(145, 145, 145);
+    background-clip: content-box;
+    border: solid 3px transparent;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.tableCont::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+table th:last-child {
+    text-align: end;
+}
+
+.total {
+    align-self: flex-end;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: rgb(255, 153, 0);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.checkout {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 153, 0);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.checkout:hover {
+    background-color: rgb(109, 72, 5);
+}
+
+.emptyCart {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    
+    .cart {
+        max-height: 100%;
+        font-size: 10px;
+        max-width: 100vw;
+    }
+}

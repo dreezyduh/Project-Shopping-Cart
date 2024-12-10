@@ -1,0 +1,35 @@
+.selected {
+    background-color: rgb(109, 72, 5);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    color: rgb(255, 153, 0);;
+}
+
+.category {
+    background-color: rgb(255, 153, 0);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.categoryCont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    padding-inline-start: 0;
+    height: 100%;
+}
+
+@media (max-width: 600px) {
+
+    .categoryCont {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+    }
+
+    .category {
+        font-size: 15px;
+    }
+}

@@ -1,22 +1,23 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import useAPIdata from './components/API';
 import { Link, Outlet } from 'react-router-dom';
 import styles from './App.module.css'
 import './App.css';
 import cartImg from './assets/cart-outline.svg';
 import logo from './assets/logo.png'
-
+import { setPrices } from './components/Functions';
 
 function App() {
   const init = useRef(false);
- 
   const {data, error, loading} = useAPIdata();
+  const [cart, setCart] = useState([]);
 
   if (loading) return <p>Loading data...</p>;
   if (error) return <p>Network error encountered {error}</p>
   
-  console.log(data)
-  dataNames(data);
+  setPrices(data);
+  console.log(data);
+  
 
   {init.current === true && data} return (
     <div className={styles.oxanium}>
@@ -35,7 +36,7 @@ function App() {
         </div>
       </nav>
       <div className={styles.main}>
-        <Outlet context = {data}/>
+        <Outlet context = {{data: data, cart: [cart, setCart], }}/>
       </div>
     </div>
   )
@@ -43,10 +44,3 @@ function App() {
 
 export default App
 
-function dataNames(data) {
-  if (data !== null) {
-      data.forEach(item => {
-          item.short = item.name.split('| ')[1]
-      });
-  }
-}
