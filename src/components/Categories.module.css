@@ -29,7 +29,7 @@
         grid-template-columns: repeat(3, 100px);
     }
 
-    .category {
+    .category, .selected{
         font-size: 15px;
     }
 }
