@@ -20,6 +20,7 @@ const rarityPrice = {
     "rarity_mythical_weapon": 175,
     "rarity_legendary_weapon": 499,
     "rarity_ancient_weapon": 1337,
+    "rarity_ancient": 1337,
     "rarity_contraband_weapon": 42069,
 }
 
